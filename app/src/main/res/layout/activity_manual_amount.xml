@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- BACK BUTTON -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_media_previous"
+            android:padding="8dp"/>
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Bill Manually"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#111111"
+            android:layout_marginTop="10dp"/>
+
+        <!-- SUBTITLE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add items and prices manually."
+            android:textSize="17sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="25dp"/>
+
+        <!-- ADD ITEM CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#111111"/>
+
+                <!-- ITEM NAME -->
+                <EditText
+                    android:id="@+id/edtItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="Item Name"
+                    android:inputType="text"
+                    android:textColor="#111111"
+                    android:textColorHint="#999999"
+                    android:textSize="16sp"
+                    android:background="@android:drawable/edit_text"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- ITEM PRICE -->
+                <EditText
+                    android:id="@+id/edtPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="RM 0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="#111111"
+                    android:textColorHint="#999999"
+                    android:textSize="16sp"
+                    android:background="@android:drawable/edit_text"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="15dp"/>
+
+                <!-- ADD ITEM BUTTON -->
+                <Button
+                    android:id="@+id/btnAddItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6C63FF"
+                    android:layout_marginTop="18dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- TAX SECTION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tax (Optional)"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#111111"/>
+
+                <!-- TAX INPUT -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal"
+                    android:background="@android:drawable/edit_text"
+                    android:layout_marginTop="15dp">
+
+                    <EditText
+                        android:id="@+id/edtTax"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="Enter Tax %"
+                        android:inputType="numberDecimal"
+                        android:textColor="#111111"
+                        android:textColorHint="#999999"
+                        android:textSize="16sp"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="12dp"/>
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:text="%"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="#666666"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- YOUR ITEMS -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:id="@+id/layoutItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Items"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#111111"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- TOTAL -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            android:backgroundTint="#EEF7E8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Amount"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="#111111"/>
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 0.00"
+                    android:textStyle="bold"
+                    android:textSize="28sp"
+                    android:textColor="#2E7D32"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- NEXT BUTTON -->
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Next"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6C63FF"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
